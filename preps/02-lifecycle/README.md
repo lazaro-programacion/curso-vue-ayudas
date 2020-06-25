@@ -5,4 +5,4 @@
 3. This
 4. v-bind
 
-["Ciclo de vida"]('lifecycle.png')
+!["Ciclo de vida"](lifecycle.png)
