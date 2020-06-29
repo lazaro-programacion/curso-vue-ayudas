@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Hello World</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+
+  <body>
+    <div class="vue">
+      <h1>{{primero}}, {{segundo}}, {{tercero}}, {{cuarto}}</h1>
+      <h1>{{suma}}</h1>
+      <button v-on:click="primero++">Incrementa el primero</button>
+      <button v-on:click="segundo++">Incrementa el segundo</button>
+      <button v-on:click="tercero++">Incrementa el tercero</button>
+      <button v-on:click="cuarto++">Incrementa el cuarto</button>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

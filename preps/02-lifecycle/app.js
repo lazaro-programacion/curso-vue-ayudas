@@ -2,17 +2,40 @@ const app = new Vue(
     {
         el: ".vue",
         data: {
-            mensaje: "Hola mundo",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png"
+            mensaje: "Hola mundo"
+        },
+        beforeCreate: function(){
+            console.log("before create")
+        },
+        created: function() {
+            console.log("created")
+        },
+        beforeMount: function() {
+            console.log("before mount");
+        },
+        mounted: function() {
+            console.log("mounted")
+        },
+        beforeUpdate: function() {
+            console.log("before update")
+        },
+        updated: function() {
+            console.log("updated")
+        },
+        beforeDestroy: function() {
+            console.log("before destroy")
+        },
+        destroyed: function() {
+            console.log("destroyed")
         },
         methods: {
-            myFirstMethod: function () {
-                return "mi primer metodo"
+            destroy: function(){
+                this.$destroy();
             },
-            devuelveMensaje: function () {
-                console.log("mensaje", this.mensaje);
-                return this.mensaje
+            cambiar: function() {
+                this.mensaje = "nuevo mensaje";
             }
         }
+
     }
 )
