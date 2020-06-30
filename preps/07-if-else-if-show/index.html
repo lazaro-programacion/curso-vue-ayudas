@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vue Hello World</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+  <div class="vue">
+    <h2>
+      <template v-if="parrafo === 1">Este es el primer elemento</template>
+      <template v-else-if="parrafo === 2">Este es el segundo elemento</template>
+      <template v-else>Este es el tercer elemento</template>
+    </h2>
+    <h1 v-show="show">Este elemento está tan sólo no visible</h1>
+  </div>
+
+
+  <script src="./app.js"></script>
+</body>
+
+</html>

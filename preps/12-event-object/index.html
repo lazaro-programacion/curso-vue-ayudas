@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vue Hello World</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+  <div class="vue">
+
+    <div style="width: 300px; height: 300px;background-color: aquamarine;" v-on:mouseMove="move"
+      v-on:click.once="click">
+      <div
+        style="width: 100px;height: 100px;background-color: rgb(1, 70, 47);margin-left: 100px;/* margin-top: 100px; */"
+        v-on:mouseMove.stop>
+      </div>
+    </div>
+    <div>
+      <ul>
+        <li>x: {{x}}</li>
+        <li>y: {{y}}</li>
+        <li>contador: {{contador}}</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+
+</html>

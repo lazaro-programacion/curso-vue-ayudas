@@ -10,6 +10,9 @@ const app = new Vue(
             },
             restarUno: function () {
                 this.contador--
+            },
+            mostrarAlerta: function (msg) {
+                alert(msg)
             }
         }
     }
