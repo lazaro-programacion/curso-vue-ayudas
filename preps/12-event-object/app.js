@@ -13,6 +13,10 @@ const app = new Vue(
             },
             click: function () {
                 this.contador++
+            },
+            key: function () {
+                console.log("key 107 pressed")
+                this.contador++
             }
 
         }
