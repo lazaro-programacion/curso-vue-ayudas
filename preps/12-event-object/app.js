@@ -15,7 +15,7 @@ const app = new Vue(
                 this.contador++
             },
             key: function () {
-                console.log("key 107 pressed")
+                console.log("key space pressed")
                 this.contador++
             }
 

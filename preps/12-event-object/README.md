@@ -6,3 +6,5 @@
 
 
 # Eventos de teclado
+
+keyup.space
