@@ -1,0 +1,13 @@
+#app {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+#app div {
+    margin: 0.3em;
+}
+
+#app div .list-group {
+    text-align: left;
+
+}

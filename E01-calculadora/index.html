@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="./app.css">
+</head>
+
+<body>
+
+    <div id="app" class="container">
+        <div>
+            Operador 1 : <input type="text" v-model="op1">
+        </div>
+        <div>
+            Operador 2 : <input type="text" v-model="op2">
+        </div>
+        <div class="resultado">
+            <ul class="list-group" v-if="op1">
+                <li class="list-group-item" v-if="op2">Suma: {{suma}}</li>
+                <li class="list-group-item" v-if="op2">Resta: {{resta}}</li>
+                <li class="list-group-item" v-if="op2">Multiplicacion: {{multiplicacion}}</li>
+                <li class="list-group-item">Cuadrado (op1): {{cuadrado}}</li>
+            </ul>
+            <div v-else>
+                Introduce algún datos en los operadores
+            </div>
+            <button v-on:click="reset()">Reset</button>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+
+</body>
+
+</html>
