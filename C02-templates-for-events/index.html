@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>templates for events...</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="./app.css">
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <!-- let empleado of empleados -->
+            <li v-for="empleado, indice in empleados">
+                Empleado número {{indice+1}}: {{empleado.nombre}} ({{empleado.dni}})
+            </li>
+        </ul>
+
+        <button v-on:click="sumar(-5)">-5</button>
+        <button v-on:click="sumar(-1)">-</button>
+        {{contador}}
+        <button @click="sumarUno()">+</button>
+        <button v-on:click="sumar(5)">+5</button>
+
+        <hr>
+
+        <button v-on:click="mostrarAlerta('Alerta 1')">Alerta 1</button>
+        <button v-on:click="mostrarAlerta('Alerta 2')">Alerta 2</button>
+
+    </div>
+
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
