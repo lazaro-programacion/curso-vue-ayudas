@@ -1,15 +1,15 @@
 <template>
   <div>
-  <titulo :title="title"></titulo>
-  <add-todo :todos="todos"></add-todo>
-  <todo-list :todos="todos"></todo-list>
+    <titulo :title="title"></titulo>
+    <add-todo :todos="todos"></add-todo>
+    <todo-list :todos="todos"></todo-list>
   </div>
 </template>
 
 <script>
-import Titulo from './components/Titulo.vue'
-import AddTodo from './components/AddTodo.vue'
-import TodoList from './components/TodoList.vue'
+import Titulo from "./components/Titulo.vue";
+import AddTodo from "./components/AddTodo.vue";
+import TodoList from "./components/TodoList.vue";
 export default {
   components: {
     Titulo,
@@ -25,11 +25,10 @@ export default {
           title: "Mi tarea"
         }
       ]
-    }
-  },
-}
+    };
+  }
+};
 </script>
 
 <style>
-
 </style>

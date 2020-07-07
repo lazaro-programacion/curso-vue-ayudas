@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+
+    <div class="app">
+        <div v-if="mensaje" id="mensaje">{{mensaje}}</div>
+        <div v-else> No hay mensajes para ti</div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
