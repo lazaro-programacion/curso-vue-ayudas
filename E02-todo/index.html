@@ -8,16 +8,50 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
         integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <div id="app">
+    <div id="app" class="container">
         <!--Aquí va el html de la app-->
-        {{msg}}
 
+        <h1>Mis Tareas</h1>
 
+        <div>
+            <ul>
+                <li>
+                    Tareas totales = {{totalTareas}}
+                </li>
+                <li>
+                    Tareas pendientes = {{totalPendientes}}
+                </li>
+                <li>
+                    Tareas terminadas = {{totalTerminadas}}
+                </li>
 
+            </ul>
+        </div>
+
+        <div>
+            <div style="display: flex;" class="input-group">
+                <label for="taskinput" class="form-label">Tarea</label>
+                <input type="email" class="form-control" id="taskinput" aria-describedby="emailHelp"
+                    v-on:keyup.enter="addTarea" v-model="nuevaTarea">
+                <button type="submit" class="btn btn-primary" v-on:click="addTarea()">Añadir</button>
+            </div>
+        </div>
+
+        <ul class="list-group">
+            <li class="list-group-item" v-for="tarea in tareas">
+                ({{tarea.id}}) {{tarea.titulo}}
+                <span class="badge bg-success float-right" v-if="tarea.completada">Completada</span>
+                <button type="button" class="btn btn-secondary btn-sm float-right" v-else
+                    v-on:click="completar(tarea)">Completar</button>
+                <button type="button" class="btn btn-danger btn-sm float-right" style="margin-right: 1rem;"
+                    v-on:click="borrar(tarea)">Borrar</button>
+            </li>
+        </ul>
 
     </div>
 
