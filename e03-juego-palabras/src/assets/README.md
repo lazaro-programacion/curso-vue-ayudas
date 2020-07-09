@@ -1,0 +1,1 @@
+Aquí irán las imágenes y otros estáticos
