@@ -1,6 +1,16 @@
 <template>
   <div id="app">
-    <memory-game />
+    <div>
+      Número de columnas:
+      <select v-model="ncols">
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+      </select>
+    </div>
+    <memory-game :columns="parseInt(ncols)" />
   </div>
 </template>
 
@@ -8,6 +18,11 @@
 import memoryGame from "./components/MemoryGame";
 export default {
   name: "App",
+  data() {
+    return {
+      ncols: 4
+    };
+  },
   components: {
     memoryGame
   }

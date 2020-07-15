@@ -8,7 +8,7 @@
       <h3 v-if="turnos">Turnos: {{turnos}}</h3>
     </div>
     <div class="memory-game">
-      <div class="board">
+      <div class="board" :style="'grid-template-columns: repeat(' + columns + ', 200px)'">
         <div class="card" v-for="(item, index) in cards" :key="index" v-on:click="onClick(item)">
           <img :src="item.image" v-if="mostrar(item)" v-on:click.stop />
         </div>
@@ -21,6 +21,7 @@
 import axios from "axios";
 import { UNSPLASH_APPLICATION, UNSPLASH_SECRET } from "../config/unsplash";
 import _ from "lodash";
+import func from "../../vue-temp/vue-editor-bridge";
 
 export default {
   data() {
@@ -31,6 +32,16 @@ export default {
       turnos: 0
     };
   },
+  watch: {
+    columns: function() {
+      this.createBoard();
+    },
+    terminado: function(value) {
+      if (value) {
+        console.log(terminado);
+      }
+    }
+  },
   props: {
     columns: {
       type: Number,
@@ -39,7 +50,9 @@ export default {
   },
   computed: {
     elements() {
-      return this.columns ** 2 / 2;
+      return this.columns ** 2 % 2 === 1
+        ? (this.columns * (this.columns - 1)) / 2
+        : this.columns ** 2 / 2;
     },
     terminado() {
       return this.cards.reduce((acc, act) => acc && act.discovered, true);
@@ -104,7 +117,6 @@ export default {
 
 .board {
   display: grid;
-  grid-template-columns: 200px 200px 200px 200px;
   gap: 20px;
 }
 
