@@ -1,18 +1,15 @@
 <template>
   <div id="app">
-    <h1>Vue Game Development</h1>
-
-    <memory-game :columns="4" />
+    <memory-game />
   </div>
 </template>
 
 <script>
-import MemoryGame from "./components/MemoryGame";
-
+import memoryGame from "./components/MemoryGame";
 export default {
   name: "App",
   components: {
-    memoryGame: MemoryGame
+    memoryGame
   }
 };
 </script>
@@ -25,9 +22,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-
-.game-wrapper {
-  text-align: center;
 }
 </style>

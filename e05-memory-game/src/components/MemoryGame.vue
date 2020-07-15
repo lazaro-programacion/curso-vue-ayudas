@@ -4,7 +4,7 @@
     <buttons />
     <puntuacion></puntuacion>
     <h1 v-if="finished">Enhorabuena!!!!!</h1>
-    <div class="board">
+    <div class="board" :style="{ gridTemplateColumns: gridTemplate}">
       <div class="card" v-for="(item, index) in cards" :key="index" v-on:click="click(item)">
         <img :src="item.image" v-if="mostrar(item)" height="100%" width="100%" v-on:click.stop />
       </div>
@@ -43,11 +43,14 @@ export default {
     },
     finished() {
       return this.cards.reduce((acc, act) => acc && act.discovered, true);
+    },
+    //grid-template-columns: 3rem 3rem 3rem 3rem;
+    gridTemplate() {
+      return "repeat(" + this.columns + ", 3rem)";
     }
   },
   methods: {
     click(item) {
-      console.log(item, this.selectedOne, this.selectedTwo);
       if (!this.selectedOne) {
         this.selectedOne = item;
       } else if (!this.selectedTwo) {
@@ -97,7 +100,7 @@ export default {
 <style scoped>
 .board {
   display: grid;
-  grid-template-columns: 3rem 3rem 3rem 3rem;
+  grid-template-columns: repeat(4, 3rem);
   gap: 1rem;
   width: 15rem;
   margin: 2rem;

@@ -1,0 +1,44 @@
+{
+  "games": [
+    {
+      "title": "ahorcado22222",
+      "author": "Once Gaming LTD",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "title": "Memory Game",
+      "author": "Once Gaming LTD"
+    },
+    {
+      "title": "Texas hold'em",
+      "author": "Once Gaming LTD",
+      "id": 3
+    },
+    {
+      "title": "Mandalorian",
+      "author": "Disney",
+      "id": 4
+    },
+    {
+      "title": "nuevo",
+      "author": "mio",
+      "id": 5
+    },
+    {
+      "title": "a",
+      "author": "aaaa",
+      "id": 6
+    },
+    {
+      "title": "juego nuevo ",
+      "author": "yo",
+      "id": 7
+    },
+    {
+      "title": "ss",
+      "author": "ss",
+      "id": 8
+    }
+  ]
+}
